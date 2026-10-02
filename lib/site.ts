@@ -5,7 +5,7 @@ export const site = {
   name: "Ponto 33",
   tagline: "Café Grab & Go",
   description:
-    "Cafeteria autônoma, aberta 24 horas. Autoatendimento rápido: escolha, pague e retire em segundos — sem fila, sem espera.",
+    "Cafeteria autônoma de autoatendimento com café de alta qualidade. Escolha, pague e retire em segundos — sem fila e sem espera.",
   url: "https://ponto33.site",
 
   contact: {

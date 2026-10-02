@@ -5,8 +5,8 @@ import {
   IconArrow,
   IconBolt,
   IconCheck,
-  IconClock,
   IconCoffee,
+  IconTrendingUp,
 } from "@/components/icons";
 import { site, waLink } from "@/lib/site";
 
@@ -17,16 +17,16 @@ export default function HomePage() {
       <section className="hero section wrap">
         <div className="hero-split">
           <div>
-            <span className="eyebrow">Cafeteria autônoma · 24 horas</span>
+            <span className="eyebrow">Cafeteria autônoma · autoatendimento</span>
             <h1>
               Seu café,
               <br />
               no seu <span className="g">tempo</span>.
             </h1>
             <p className="lead">
-              Autoatendimento de verdade: escolha, posicione o copo, pague e
-              retire em segundos. Sem fila, sem espera — a qualquer hora do dia
-              ou da noite.
+              Autoatendimento de verdade, com café de alta qualidade: escolha,
+              posicione o copo, pague e retire em segundos. Sem fila e sem
+              espera.
             </p>
             <div className="hero-cta">
               <Link href="/franquias" className="btn btn-primary">
@@ -66,16 +66,16 @@ export default function HomePage() {
 
         <div className="stats">
           <div className="stat">
-            <div className="n">24h</div>
-            <div className="l">Aberto todos os dias</div>
-          </div>
-          <div className="stat">
             <div className="n">~60s</div>
             <div className="l">Do pedido à retirada</div>
           </div>
           <div className="stat">
             <div className="n">0</div>
-            <div className="l">Filas e burocracia</div>
+            <div className="l">Filas e espera</div>
+          </div>
+          <div className="stat">
+            <div className="n">100%</div>
+            <div className="l">Autoatendimento digital</div>
           </div>
         </div>
       </section>
@@ -183,11 +183,11 @@ export default function HomePage() {
         <div className="features">
           <div className="feature">
             <div className="fi">
-              <IconClock />
+              <IconCoffee />
             </div>
             <div>
-              <h3>Aberto 24/7</h3>
-              <p>De madrugada ou na hora do pico: a Ponto 33 nunca fecha.</p>
+              <h3>Café de alta qualidade</h3>
+              <p>Grãos selecionados e extração consistente em cada xícara.</p>
             </div>
           </div>
           <div className="feature">
@@ -201,11 +201,11 @@ export default function HomePage() {
           </div>
           <div className="feature">
             <div className="fi">
-              <IconCoffee />
+              <IconTrendingUp />
             </div>
             <div>
-              <h3>Café de verdade</h3>
-              <p>Grãos selecionados e extração consistente em cada xícara.</p>
+              <h3>Mercado em crescimento</h3>
+              <p>O consumo de café cresce no país — um setor em plena expansão.</p>
             </div>
           </div>
           <div className="feature">
@@ -226,8 +226,8 @@ export default function HomePage() {
           <div>
             <h2>Transforme seu espaço em um Ponto 33.</h2>
             <p>
-              Modelo autônomo, enxuto e escalável. Descubra como ter uma unidade
-              faturando 24 horas por dia.
+              Modelo autônomo, enxuto e escalável, em um mercado em plena
+              expansão. Descubra como ter a sua unidade.
             </p>
           </div>
           <Link href="/franquias" className="btn btn-primary">

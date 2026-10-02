@@ -33,7 +33,6 @@ export const locais: LocalPreset[] = [
 // Defaults iniciais (mesma base da referência de mercado).
 export const calcDefaults = {
   copos: 40,
-  preco: 8,
+  preco: 8.33,
   aluguel: 0,
-  atendimento: 0,
 } as const;

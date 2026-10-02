@@ -93,6 +93,26 @@ img {
   padding-block: clamp(54px, 8vw, 100px);
 }
 
+/* Faixa de fundo claro (creme) — redefine os tokens para o tema claro. */
+.section-light {
+  background: #efeae0;
+  color-scheme: light;
+  --fg: #1b150d;
+  --muted: #6a5e4b;
+  --muted-2: #8c7f69;
+  --line: #ded6c4;
+  --bg: #ffffff;
+  --surface: #f7f3ea;
+  --surface-2: #efe9dc;
+  --gold: #9c7c1e;
+  --gold-dim: #c6a63f;
+  --gold-soft: rgba(156, 124, 30, 0.12);
+  color: var(--fg);
+}
+.section-light .eyebrow {
+  color: #7a5f10;
+}
+
 .eyebrow {
   font-family: var(--font-display), sans-serif;
   text-transform: uppercase;
@@ -320,6 +340,13 @@ img {
   font-size: clamp(2.6rem, 7.5vw, 5rem);
   font-weight: 800;
   margin-top: 18px;
+}
+.hero-highlight {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.3rem, 3.4vw, 2rem);
+  letter-spacing: -0.01em;
+  margin-top: 16px;
 }
 .hero .lead {
   margin-top: 22px;
@@ -627,6 +654,11 @@ img {
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   margin-top: 44px;
+}
+@media (min-width: 820px) {
+  .features.three {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 @media (max-width: 620px) {
   .features {

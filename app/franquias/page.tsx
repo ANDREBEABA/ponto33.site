@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Manifesto } from "@/components/Manifesto";
+import { ProfitCalculator } from "@/components/ProfitCalculator";
+import { Faq } from "@/components/Faq";
 import {
   IconArrow,
   IconBuilding,
@@ -10,7 +12,7 @@ import {
   IconMoney,
   IconScreen,
 } from "@/components/icons";
-import { waLink } from "@/lib/site";
+import { brl, franchise, waLink } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Franquias",
@@ -213,28 +215,47 @@ export default function FranquiasPage() {
       <section className="section wrap">
         <div className="section-head center">
           <span className="eyebrow">Em números</span>
-          <h2>O investimento, de forma transparente.</h2>
+          <h2>O negócio, de forma transparente.</h2>
           <p>
-            Valores de referência — serão confirmados na conversa com nosso time.
+            Valores médios de referência da operação. O resultado real varia
+            conforme o ponto e o fluxo de pessoas.
           </p>
         </div>
-        <div className="nums">
+        <div className="nums five">
           <div className="numcard">
-            <div className="big">A partir de R$ —</div>
+            <div className="big">A partir de {brl(franchise.investimento)}</div>
             <div className="lbl">Investimento inicial</div>
-            <span className="flag">a definir</span>
           </div>
           <div className="numcard">
-            <div className="big">— meses</div>
-            <div className="lbl">Retorno estimado</div>
-            <span className="flag">a definir</span>
+            <div className="big">{brl(franchise.faturamentoMedio, true)}</div>
+            <div className="lbl">Faturamento médio / mês</div>
           </div>
           <div className="numcard">
-            <div className="big">a partir de — m²</div>
-            <div className="lbl">Espaço necessário</div>
-            <span className="flag">a definir</span>
+            <div className="big">{brl(franchise.lucroMedio, true)}</div>
+            <div className="lbl">Lucratividade média / mês</div>
+          </div>
+          <div className="numcard">
+            <div className="big">Até {franchise.roiMeses} meses</div>
+            <div className="lbl">Retorno do investimento (ROI)</div>
+          </div>
+          <div className="numcard">
+            <div className="big">Até {franchise.margemPct}%</div>
+            <div className="lbl">Margem de lucro / mês</div>
           </div>
         </div>
+      </section>
+
+      {/* ---------- CALCULADORA DE RENTABILIDADE ---------- */}
+      <section className="section wrap">
+        <div className="section-head center">
+          <span className="eyebrow">Calculadora</span>
+          <h2>Simule a sua rentabilidade.</h2>
+          <p>
+            Ajuste os valores e veja a estimativa de lucro mensal, lucro anual e
+            tempo de retorno do investimento.
+          </p>
+        </div>
+        <ProfitCalculator />
       </section>
 
       {/* ---------- COMO COMEÇAR ---------- */}
@@ -274,6 +295,9 @@ export default function FranquiasPage() {
           </div>
         </div>
       </section>
+
+      {/* ---------- FAQ (GEO/AEO) ---------- */}
+      <Faq />
 
       {/* ---------- CTA ---------- */}
       <section className="section wrap">

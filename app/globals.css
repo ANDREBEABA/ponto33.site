@@ -733,10 +733,29 @@ img {
   gap: 16px;
   margin-top: 40px;
 }
+.nums.five {
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (min-width: 880px) {
+  .nums.five {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
 @media (max-width: 700px) {
   .nums {
     grid-template-columns: 1fr;
   }
+  .nums.five {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 460px) {
+  .nums.five {
+    grid-template-columns: 1fr;
+  }
+}
+.nums.five .numcard .big {
+  font-size: clamp(1.3rem, 3.4vw, 1.7rem);
 }
 .numcard {
   border: 1px solid var(--line);
@@ -962,6 +981,183 @@ img {
   margin-top: 34px;
   border-top: 1px solid var(--line);
   padding-top: 22px;
+}
+
+/* ---------- calculadora ---------- */
+.calc {
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 20px;
+  align-items: stretch;
+}
+@media (max-width: 820px) {
+  .calc {
+    grid-template-columns: 1fr;
+  }
+}
+.calc-inputs {
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--surface);
+  padding: clamp(22px, 3vw, 32px);
+  display: grid;
+  gap: 24px;
+  align-content: start;
+}
+.calc-field label {
+  display: block;
+  font-family: var(--font-display), sans-serif;
+  font-weight: 600;
+  font-size: 0.92rem;
+  margin-bottom: 10px;
+}
+.calc-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+  padding: 0 14px;
+}
+.calc-input:focus-within {
+  border-color: var(--gold);
+}
+.calc-affix {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.calc-input input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: 0;
+  outline: none;
+  color: var(--fg);
+  font-family: var(--font-display), sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 12px 0;
+}
+.calc-field input[type="range"] {
+  width: 100%;
+  margin-top: 12px;
+  accent-color: var(--gold);
+}
+.calc-result {
+  border: 1px solid var(--gold-dim);
+  border-radius: var(--r);
+  background: linear-gradient(180deg, var(--gold-soft), transparent);
+  padding: clamp(22px, 3vw, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.calc-result-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+.calc-result-label {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.calc-result-value {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.3rem, 3.2vw, 1.7rem);
+  font-variant-numeric: tabular-nums;
+}
+.calc-result-row.highlight {
+  border-bottom: 0;
+}
+.calc-result-row.highlight .calc-result-value {
+  color: var(--gold);
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+}
+.calc-note {
+  color: var(--muted-2);
+  font-size: 0.8rem;
+  margin: 0;
+}
+.calc-result .btn {
+  margin-top: auto;
+  justify-content: center;
+}
+
+/* ---------- faq ---------- */
+.faq {
+  margin-top: 40px;
+  max-width: 820px;
+  margin-inline: auto;
+  display: grid;
+  gap: 12px;
+}
+.faq-item {
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--surface);
+  overflow: hidden;
+}
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 22px;
+}
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.faq-item summary h3 {
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin: 0;
+}
+.faq-item summary:hover h3 {
+  color: var(--gold);
+}
+.faq-icon {
+  position: relative;
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+}
+.faq-icon::before,
+.faq-icon::after {
+  content: "";
+  position: absolute;
+  background: var(--gold);
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.faq-icon::before {
+  top: 9px;
+  left: 2px;
+  width: 16px;
+  height: 2px;
+}
+.faq-icon::after {
+  top: 2px;
+  left: 9px;
+  width: 2px;
+  height: 16px;
+}
+.faq-item[open] .faq-icon::after {
+  transform: rotate(90deg);
+  opacity: 0;
+}
+.faq-item p {
+  color: var(--muted);
+  padding: 0 22px 22px;
+  margin: 0;
+  max-width: 68ch;
 }
 
 /* ---------- floating whatsapp ---------- */

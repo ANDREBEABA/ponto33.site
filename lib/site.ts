@@ -24,6 +24,25 @@ export const site = {
   },
 } as const;
 
+// Números oficiais da franquia (fonte única — usados nos stats, calculadora e FAQ).
+export const franchise = {
+  investimento: 70000, // a partir de
+  faturamentoMedio: 10349, // por mês
+  lucroMedio: 3881, // por mês
+  roiMeses: 16, // retorno em até
+  margemPct: 37, // margem de lucro até
+} as const;
+
+// Formata um valor em Reais (pt-BR). Ex.: brl(70000) => "R$ 70.000".
+export function brl(value: number, withCents = false): string {
+  return new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+    minimumFractionDigits: withCents ? 2 : 0,
+    maximumFractionDigits: withCents ? 2 : 0,
+  }).format(value);
+}
+
 export const nav = [
   { label: "Início", href: "/" },
   { label: "Franquias", href: "/franquias" },

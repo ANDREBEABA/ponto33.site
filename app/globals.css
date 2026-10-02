@@ -264,6 +264,17 @@ img {
   height: 36px;
   color: var(--gold);
 }
+.brand-logo {
+  display: block;
+  height: 40px;
+  width: auto;
+}
+.brand-logo-lg {
+  height: clamp(46px, 7vw, 62px);
+}
+.brand-logo-foot {
+  height: 34px;
+}
 .brand .wordmark {
   font-family: var(--font-display), sans-serif;
   font-weight: 700;

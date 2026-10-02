@@ -4,6 +4,10 @@ import { brl, franchise } from "./site";
 // Usadas tanto no acordeão visível quanto no JSON-LD (FAQPage) — mesma fonte.
 export const faqItems: { q: string; a: string }[] = [
   {
+    q: "Qual é o modelo de negócio da Ponto 33?",
+    a: "A Ponto 33 é uma cafeteria autônoma de autoatendimento (grab & go) operada por franqueados. O cliente escolhe, paga e retira sozinho na estação, sem equipe no balcão. O pagamento é 100% digital e o foco é café de alta qualidade com uma operação enxuta e escalável.",
+  },
+  {
     q: "Quanto custa uma franquia da Ponto 33?",
     a: `O investimento começa a partir de ${brl(
       franchise.investimento

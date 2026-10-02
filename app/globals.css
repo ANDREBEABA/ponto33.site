@@ -324,6 +324,34 @@ img {
 .hero {
   padding-top: clamp(40px, 6vw, 76px);
 }
+
+/* Fundo da primeira quebra (Franquias) — brilho dourado sutil */
+.hero-franquias {
+  position: relative;
+  overflow: hidden;
+}
+.hero-franquias::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      55% 60% at 78% 22%,
+      rgba(212, 178, 60, 0.16),
+      transparent 70%
+    ),
+    radial-gradient(
+      45% 55% at 12% 85%,
+      rgba(212, 178, 60, 0.08),
+      transparent 72%
+    );
+}
+.hero-franquias > .wrap {
+  position: relative;
+  z-index: 1;
+}
 .hero-split {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;

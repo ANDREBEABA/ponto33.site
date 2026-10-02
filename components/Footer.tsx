@@ -43,7 +43,12 @@ export function Footer() {
         </div>
 
         <div className="copy">
-          © {year} {site.name} · {site.tagline}. Todos os direitos reservados.
+          <p>
+            © {year} {site.name} · {site.tagline}. Todos os direitos reservados.
+          </p>
+          <p className="copy-holding">
+            {site.name} é uma marca da {site.holding}.
+          </p>
         </div>
       </div>
     </footer>

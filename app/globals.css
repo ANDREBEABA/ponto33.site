@@ -18,7 +18,7 @@
   --gold-soft: rgba(212, 178, 60, 0.12);
   --brown: #2a1a0e;
 
-  --maxw: 1120px;
+  --maxw: 1320px;
   --r: 16px;
 
   color-scheme: dark;
@@ -1013,6 +1013,13 @@ img {
   margin-top: 34px;
   border-top: 1px solid var(--line);
   padding-top: 22px;
+}
+.copy p {
+  margin: 0;
+}
+.copy-holding {
+  margin-top: 6px;
+  color: var(--muted);
 }
 
 /* ---------- calculadora ---------- */

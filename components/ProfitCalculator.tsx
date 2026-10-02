@@ -94,9 +94,6 @@ export function ProfitCalculator() {
   const [copos, setCopos] = useState<number>(calcDefaults.copos);
   const [preco, setPreco] = useState<number>(calcDefaults.preco);
   const [aluguel, setAluguel] = useState<number>(calcDefaults.aluguel);
-  const [atendimento, setAtendimento] = useState<number>(
-    calcDefaults.atendimento
-  );
 
   function onSelectLocal(id: string) {
     setLocal(id);
@@ -112,7 +109,7 @@ export function ProfitCalculator() {
   const marketing = faturamento * calcRates.marketing;
   const bancarias = faturamento * calcRates.bancarias;
 
-  const custos = cmv + impostos + royalty + marketing + bancarias + atendimento + aluguel;
+  const custos = cmv + impostos + royalty + marketing + bancarias + aluguel;
   const lucro = faturamento - custos;
   const investimento = franchise.investimento;
   const payback = lucro > 0 ? investimento / lucro : 0;
@@ -181,20 +178,9 @@ export function ProfitCalculator() {
           value={preco}
           min={1}
           max={50}
-          step={0.5}
+          step={0.01}
           prefix="R$"
           onChange={setPreco}
-        />
-
-        <Field
-          id="calc-atendimento"
-          label="Atendimento / reposição (mensal)"
-          value={atendimento}
-          min={0}
-          max={10000}
-          step={50}
-          prefix="R$"
-          onChange={setAtendimento}
         />
 
         <div className="calc-static">
@@ -239,7 +225,6 @@ export function ProfitCalculator() {
             muted
           />
           <Row label="Taxas bancárias (~1,5%)" value={brl(bancarias)} muted />
-          <Row label="Atendimento" value={brl(atendimento)} muted />
           <Row label="Aluguel" value={brl(aluguel)} muted />
           <div className="calc-line total">
             <span className="calc-line-label">Lucro líquido mensal estimado</span>

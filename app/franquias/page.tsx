@@ -6,18 +6,20 @@ import { ProfitCalculator } from "@/components/ProfitCalculator";
 import { Faq } from "@/components/Faq";
 import {
   IconArrow,
-  IconBuilding,
+  IconBolt,
   IconCheck,
   IconClock,
+  IconCoffee,
   IconMoney,
-  IconScreen,
+  IconTrendingUp,
+  IconUsers,
 } from "@/components/icons";
 import { brl, franchise, waLink } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Franquias",
   description:
-    "Seja um franqueado Ponto 33: modelo de cafeteria autônoma, sem equipe no balcão, com baixo custo fixo e faturando 24 horas.",
+    "Seja um franqueado Ponto 33: cafeteria autônoma de autoatendimento, sem equipe, com baixo custo de aluguel, início simples e café de alta qualidade.",
 };
 
 const msgFranquia =
@@ -37,10 +39,13 @@ export default function FranquiasPage() {
               Seja dono de um café que{" "}
               <span className="gold-grad">trabalha sozinho</span>.
             </h1>
+            <p className="hero-highlight">
+              Lucre até <span className="g">R$ 5 mil por mês</span>.
+            </p>
             <p className="lead">
-              Uma operação de cafeteria sem as dores de sempre: sem equipe no
-              balcão, com baixo custo fixo e faturando 24 horas — inclusive
-              enquanto você dorme.
+              Uma operação de cafeteria sem as dores de sempre: sem equipe,
+              baixo custo de aluguel, início simples e que não exige muito do seu
+              tempo — com café de alta qualidade.
             </p>
             <div className="hero-cta">
               <a
@@ -57,26 +62,26 @@ export default function FranquiasPage() {
             </div>
             <div className="impact">
               <div>
-                <div className="n">24/7</div>
-                <div className="l">faturando sem parar</div>
+                <div className="n">Até R$ 5 mil</div>
+                <div className="l">de lucro por mês</div>
               </div>
               <div>
                 <div className="n">0</div>
                 <div className="l">funcionário no balcão</div>
               </div>
               <div>
-                <div className="n">∞</div>
-                <div className="l">potencial de expansão</div>
+                <div className="n">Em alta</div>
+                <div className="l">mercado em crescimento</div>
               </div>
             </div>
           </div>
 
           <div className="hero-photo">
             <div className="badge-float b1">
-              <IconClock /> Opera 24 horas
+              <IconUsers /> Sem equipe
             </div>
             <div className="badge-float b2">
-              <IconCheck /> Baixo custo fixo
+              <IconCheck /> Baixo custo de aluguel
             </div>
             <div className="frame">
               <Image
@@ -109,16 +114,40 @@ export default function FranquiasPage() {
           <span className="eyebrow">Por que investir</span>
           <h2>Um modelo pensado para dar certo.</h2>
         </div>
-        <div className="features">
+        <div className="features three">
+          <div className="feature">
+            <div className="fi">
+              <IconUsers />
+            </div>
+            <div>
+              <h3>Não precisa de equipe</h3>
+              <p>
+                Operação 100% autônoma: sem funcionário no balcão e com gestão
+                simplificada.
+              </p>
+            </div>
+          </div>
           <div className="feature">
             <div className="fi">
               <IconMoney />
             </div>
             <div>
-              <h3>Baixo custo operacional</h3>
+              <h3>Baixo custo de aluguel</h3>
               <p>
-                Operação autônoma reduz despesas com pessoal e simplifica a
-                gestão.
+                A estação é compacta e cabe em poucos metros quadrados — o
+                aluguel pesa menos.
+              </p>
+            </div>
+          </div>
+          <div className="feature">
+            <div className="fi">
+              <IconBolt />
+            </div>
+            <div>
+              <h3>Início simples</h3>
+              <p>
+                Você recebe a unidade pronta para operar, com marca e tecnologia
+                instaladas.
               </p>
             </div>
           </div>
@@ -127,34 +156,34 @@ export default function FranquiasPage() {
               <IconClock />
             </div>
             <div>
-              <h3>Fatura 24 horas</h3>
+              <h3>Não exige muito tempo</h3>
               <p>
-                A unidade trabalha dia e noite, inclusive fora do horário
-                comercial.
+                Poucas horas por semana: a operação é automatizada e monitorada à
+                distância.
               </p>
             </div>
           </div>
           <div className="feature">
             <div className="fi">
-              <IconScreen />
+              <IconCoffee />
             </div>
             <div>
-              <h3>Marca e tecnologia prontas</h3>
+              <h3>Café de alta qualidade</h3>
               <p>
-                Você recebe a plataforma, o padrão visual e o suporte para
-                operar.
+                Grãos selecionados e extração consistente — um produto que
+                fideliza o cliente.
               </p>
             </div>
           </div>
           <div className="feature">
             <div className="fi">
-              <IconBuilding />
+              <IconTrendingUp />
             </div>
             <div>
-              <h3>Cabe em qualquer ponto</h3>
+              <h3>Mercado em rápido crescimento</h3>
               <p>
-                Prédios, academias, hospitais, faculdades, lojas — ocupa pouco
-                espaço.
+                O consumo de café no país cresce ano a ano — um setor em plena
+                expansão.
               </p>
             </div>
           </div>
@@ -246,16 +275,18 @@ export default function FranquiasPage() {
       </section>
 
       {/* ---------- CALCULADORA DE RENTABILIDADE ---------- */}
-      <section className="section wrap">
-        <div className="section-head center">
-          <span className="eyebrow">Calculadora</span>
-          <h2>Simule a sua rentabilidade.</h2>
-          <p>
-            Ajuste os valores e veja a estimativa de lucro mensal, lucro anual e
-            tempo de retorno do investimento.
-          </p>
+      <section className="section section-light">
+        <div className="wrap">
+          <div className="section-head center">
+            <span className="eyebrow">Calculadora</span>
+            <h2>Simule a sua rentabilidade.</h2>
+            <p>
+              Ajuste os valores e veja a estimativa de lucro mensal e o tempo de
+              retorno do investimento.
+            </p>
+          </div>
+          <ProfitCalculator />
         </div>
-        <ProfitCalculator />
       </section>
 
       {/* ---------- COMO COMEÇAR ---------- */}

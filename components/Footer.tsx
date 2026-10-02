@@ -16,7 +16,8 @@ export function Footer() {
               </span>
             </div>
             <p style={{ marginTop: 14 }}>
-              Cafeteria autônoma. Seu café, no seu tempo — 24 horas por dia.
+              Cafeteria autônoma de autoatendimento. Café de alta qualidade,
+              pronto em segundos.
             </p>
           </div>
 

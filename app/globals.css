@@ -93,6 +93,26 @@ img {
   padding-block: clamp(54px, 8vw, 100px);
 }
 
+/* Faixa de fundo claro (creme) — redefine os tokens para o tema claro. */
+.section-light {
+  background: #efeae0;
+  color-scheme: light;
+  --fg: #1b150d;
+  --muted: #6a5e4b;
+  --muted-2: #8c7f69;
+  --line: #ded6c4;
+  --bg: #ffffff;
+  --surface: #f7f3ea;
+  --surface-2: #efe9dc;
+  --gold: #9c7c1e;
+  --gold-dim: #c6a63f;
+  --gold-soft: rgba(156, 124, 30, 0.12);
+  color: var(--fg);
+}
+.section-light .eyebrow {
+  color: #7a5f10;
+}
+
 .eyebrow {
   font-family: var(--font-display), sans-serif;
   text-transform: uppercase;
@@ -320,6 +340,13 @@ img {
   font-size: clamp(2.6rem, 7.5vw, 5rem);
   font-weight: 800;
   margin-top: 18px;
+}
+.hero-highlight {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.3rem, 3.4vw, 2rem);
+  letter-spacing: -0.01em;
+  margin-top: 16px;
 }
 .hero .lead {
   margin-top: 22px;
@@ -627,6 +654,11 @@ img {
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   margin-top: 44px;
+}
+@media (min-width: 820px) {
+  .features.three {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 @media (max-width: 620px) {
   .features {
@@ -1303,4 +1335,89 @@ img {
 .fab svg {
   width: 28px;
   height: 28px;
+}
+
+/* ---------- movimento ---------- */
+/* reveal ao rolar — só ativa com JS (js-motion); sem JS o conteúdo fica visível */
+.js-motion .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: opacity, transform;
+}
+.js-motion .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* microinterações de hover (depois do reveal para vencer na cascata) */
+.step,
+.feature,
+.numcard,
+.ccard {
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+.step:hover,
+.feature:hover,
+.numcard:hover,
+.ccard:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold-dim);
+}
+.shot img,
+.hero-photo .frame img {
+  transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.shot:hover img,
+.hero-photo:hover .frame img {
+  transform: scale(1.045);
+}
+
+/* flutuação sutil dos selos sobre as fotos */
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+.hero-badge {
+  animation: floaty 4.5s ease-in-out infinite;
+}
+.badge-float.b1 {
+  animation: floaty 5s ease-in-out infinite;
+}
+.badge-float.b2 {
+  animation: floaty 5s ease-in-out infinite 0.7s;
+}
+
+/* seta do manifesto em leve avanço contínuo */
+@keyframes nudge {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+.manifesto .chev svg:last-child {
+  animation: nudge 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-motion .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .hero-badge,
+  .badge-float.b1,
+  .badge-float.b2,
+  .manifesto .chev svg:last-child {
+    animation: none;
+  }
 }

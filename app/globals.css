@@ -1304,3 +1304,88 @@ img {
   width: 28px;
   height: 28px;
 }
+
+/* ---------- movimento ---------- */
+/* reveal ao rolar — só ativa com JS (js-motion); sem JS o conteúdo fica visível */
+.js-motion .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: opacity, transform;
+}
+.js-motion .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* microinterações de hover (depois do reveal para vencer na cascata) */
+.step,
+.feature,
+.numcard,
+.ccard {
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+.step:hover,
+.feature:hover,
+.numcard:hover,
+.ccard:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold-dim);
+}
+.shot img,
+.hero-photo .frame img {
+  transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.shot:hover img,
+.hero-photo:hover .frame img {
+  transform: scale(1.045);
+}
+
+/* flutuação sutil dos selos sobre as fotos */
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+.hero-badge {
+  animation: floaty 4.5s ease-in-out infinite;
+}
+.badge-float.b1 {
+  animation: floaty 5s ease-in-out infinite;
+}
+.badge-float.b2 {
+  animation: floaty 5s ease-in-out infinite 0.7s;
+}
+
+/* seta do manifesto em leve avanço contínuo */
+@keyframes nudge {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+.manifesto .chev svg:last-child {
+  animation: nudge 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-motion .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .hero-badge,
+  .badge-float.b1,
+  .badge-float.b2,
+  .manifesto .chev svg:last-child {
+    animation: none;
+  }
+}

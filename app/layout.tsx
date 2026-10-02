@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { Motion } from "@/components/Motion";
 import { site } from "@/lib/site";
 
 const display = Outfit({
@@ -57,6 +58,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <WhatsAppButton />
+        <Motion />
       </body>
     </html>
   );

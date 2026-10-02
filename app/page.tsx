@@ -80,6 +80,26 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ---------- VÍDEO ---------- */}
+      <section className="section wrap">
+        <div className="section-head center">
+          <span className="eyebrow">Experiência</span>
+          <h2>Veja a Ponto 33 em ação.</h2>
+        </div>
+        <div className="video-frame">
+          <video
+            className="video-el"
+            src="/video/ponto33.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            controls
+            preload="metadata"
+          />
+        </div>
+      </section>
+
       {/* ---------- MANIFESTO ---------- */}
       <Manifesto
         quote={

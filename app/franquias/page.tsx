@@ -31,7 +31,8 @@ export default function FranquiasPage() {
   return (
     <>
       {/* ---------- HERO ---------- */}
-      <section className="hero section wrap">
+      <section className="hero-franquias">
+        <div className="hero section wrap">
         <div className="hero-split">
           <div>
             <span className="eyebrow">Franquias Ponto 33</span>
@@ -94,6 +95,7 @@ export default function FranquiasPage() {
               />
             </div>
           </div>
+        </div>
         </div>
       </section>
 

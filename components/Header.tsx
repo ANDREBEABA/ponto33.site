@@ -2,23 +2,55 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { LogoIcon } from "./Logo";
-import { nav, site } from "@/lib/site";
+import { nav, site, waLink } from "@/lib/site";
+
+function BrandLogo({ className }: { className?: string }) {
+  return (
+    <Image
+      src="/logo-ponto33-full.png"
+      alt="Ponto 33 — Café Grab & Go"
+      width={2000}
+      height={704}
+      priority
+      className={`brand-logo ${className ?? ""}`}
+      style={{ width: "auto" }}
+    />
+  );
+}
 
 export function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
+  // Variante landing: a página de Franquias não usa o cabeçalho de navegação.
+  if (pathname === "/franquias") {
+    return (
+      <header className="site-header">
+        <div className="wrap nav-landing">
+          <span className="nav-landing-spacer" aria-hidden="true" />
+          <Link href="/" className="brand" aria-label="Ponto 33 — início">
+            <BrandLogo className="brand-logo-lg" />
+          </Link>
+          <a
+            href={waLink("Olá! Tenho interesse em uma franquia Ponto 33.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary nav-landing-cta"
+          >
+            Quero ser franqueado →
+          </a>
+        </div>
+      </header>
+    );
+  }
+
   return (
     <header className="site-header">
       <div className="wrap nav">
         <Link href="/" className="brand" aria-label="Ponto 33 — início" onClick={() => setOpen(false)}>
-          <LogoIcon />
-          <span>
-            <span className="wordmark">PONTO 33</span>
-            <span className="tag">{site.tagline}</span>
-          </span>
+          <BrandLogo />
         </Link>
 
         <nav className={`menu ${open ? "open" : ""}`}>

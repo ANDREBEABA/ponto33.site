@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LogoIcon } from "./Logo";
+import Image from "next/image";
 import { nav, site, waLink, mailtoLink } from "@/lib/site";
 
 export function Footer() {
@@ -8,13 +8,15 @@ export function Footer() {
     <footer className="site-footer">
       <div className="wrap">
         <div className="foot">
-          <div className="col" style={{ maxWidth: 260 }}>
-            <div className="mark-small">
-              <LogoIcon />
-              <span className="wordmark" style={{ fontFamily: "var(--font-display), sans-serif", fontWeight: 700 }}>
-                PONTO 33
-              </span>
-            </div>
+          <div className="col" style={{ maxWidth: 280 }}>
+            <Image
+              src="/logo-ponto33-full.png"
+              alt="Ponto 33 — Café Grab & Go"
+              width={2000}
+              height={704}
+              className="brand-logo brand-logo-foot"
+              style={{ width: "auto" }}
+            />
             <p style={{ marginTop: 14 }}>
               Cafeteria autônoma de autoatendimento. Café de alta qualidade,
               pronto em segundos.

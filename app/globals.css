@@ -839,6 +839,16 @@ img {
 .band .btn-primary:hover {
   background: #000;
 }
+.band-eyebrow {
+  display: block;
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.72rem;
+  color: #5b4712;
+  margin-bottom: 10px;
+}
 
 /* ---------- callout ---------- */
 .callout {

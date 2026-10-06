@@ -134,6 +134,24 @@ export default function OferecaUmPontoPage() {
         </div>
       </section>
 
+      {/* ---------- INDIQUE E GANHE ---------- */}
+      <section className="section wrap">
+        <div className="band">
+          <div>
+            <span className="band-eyebrow">Indique e ganhe</span>
+            <h2>Indique um ponto e ganhe até R$ 500.</h2>
+            <p>
+              Indicou um local que virou uma unidade Ponto 33? Você recebe um
+              prêmio de <strong>até R$ 500,00</strong> — pago após a formalização
+              com o ponto indicado.
+            </p>
+          </div>
+          <a href="#form" className="btn btn-primary">
+            Indicar um ponto <IconArrow style={{ width: 18, height: 18 }} />
+          </a>
+        </div>
+      </section>
+
       {/* ---------- FORMULÁRIO ---------- */}
       <section className="section wrap" id="form">
         <div className="section-head center">

@@ -47,6 +47,7 @@ export function brl(value: number, withCents = false): string {
 export const nav = [
   { label: "Início", href: "/" },
   { label: "Franquias", href: "/franquias" },
+  { label: "Ofereça um ponto", href: "/ofereca-um-ponto" },
   { label: "Contato", href: "/contato" },
 ] as const;
 

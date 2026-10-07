@@ -23,6 +23,9 @@ export const site = {
       "Mais do que um café servido em segundos, somos o impulso exato para a sua jornada.",
     sub: "Ponto 33: o café para quem tem pressa, o ponto de avanço para quem tem propósito.",
   },
+
+  // ID do funil do formulário Jestor (franquia).
+  jestorFunilId: "funil_1791392358214_ttm8",
 } as const;
 
 // Números oficiais da franquia (fonte única — usados nos stats, calculadora e FAQ).

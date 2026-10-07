@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { nav, site, waLink } from "@/lib/site";
+import { nav, site } from "@/lib/site";
 
 function BrandLogo({ className }: { className?: string }) {
   return (
@@ -34,9 +34,7 @@ export function Header() {
             <BrandLogo className="brand-logo-lg" />
           </Link>
           <a
-            href={waLink("Olá! Tenho interesse em uma franquia Ponto 33.")}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/franquias#quero-ser-franqueado"
             className="btn btn-primary nav-landing-cta"
           >
             Quero ser franqueado →

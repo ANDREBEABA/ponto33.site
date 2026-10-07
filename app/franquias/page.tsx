@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Manifesto } from "@/components/Manifesto";
 import { ProfitCalculator } from "@/components/ProfitCalculator";
+import { JestorForm } from "@/components/JestorForm";
 import { Faq } from "@/components/Faq";
 import {
   IconArrow,
@@ -22,10 +23,7 @@ export const metadata: Metadata = {
     "Seja um franqueado Ponto 33: cafeteria autônoma de autoatendimento, sem equipe, com baixo custo de aluguel, início simples e café de alta qualidade.",
 };
 
-const msgFranquia =
-  "Olá! Tenho interesse em uma franquia Ponto 33.";
-const msgApresentacao =
-  "Olá! Quero a apresentação da franquia Ponto 33.";
+const msgFranquia = "Olá! Tenho interesse em uma franquia Ponto 33.";
 
 export default function FranquiasPage() {
   return (
@@ -49,17 +47,17 @@ export default function FranquiasPage() {
               tempo — com café de alta qualidade.
             </p>
             <div className="hero-cta">
+              <a href="#quero-ser-franqueado" className="btn btn-primary">
+                Quero ser franqueado <IconArrow style={{ width: 18, height: 18 }} />
+              </a>
               <a
                 href={waLink(msgFranquia)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-primary"
+                className="btn btn-ghost"
               >
-                Quero ser franqueado <IconArrow style={{ width: 18, height: 18 }} />
+                Falar no WhatsApp
               </a>
-              <Link href="/contato" className="btn btn-ghost">
-                Receber apresentação
-              </Link>
             </div>
             <div className="impact">
               <div>
@@ -329,6 +327,19 @@ export default function FranquiasPage() {
         </div>
       </section>
 
+      {/* ---------- FORMULÁRIO (JESTOR) ---------- */}
+      <section className="section wrap" id="quero-ser-franqueado">
+        <div className="section-head center">
+          <span className="eyebrow">Quero ser franqueado</span>
+          <h2>Dê o primeiro passo.</h2>
+          <p>
+            Preencha o formulário e nosso time entra em contato com a
+            apresentação completa da franquia.
+          </p>
+        </div>
+        <JestorForm />
+      </section>
+
       {/* ---------- FAQ (GEO/AEO) ---------- */}
       <Faq />
 
@@ -338,17 +349,11 @@ export default function FranquiasPage() {
           <div>
             <h2>Pronto para dar o próximo passo?</h2>
             <p>
-              Converse agora com nosso time e receba a apresentação completa da
-              franquia.
+              Preencha o formulário e receba a apresentação completa da franquia.
             </p>
           </div>
-          <a
-            href={waLink(msgApresentacao)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary"
-          >
-            Falar no WhatsApp <IconArrow style={{ width: 18, height: 18 }} />
+          <a href="#quero-ser-franqueado" className="btn btn-primary">
+            Quero ser franqueado <IconArrow style={{ width: 18, height: 18 }} />
           </a>
         </div>
       </section>

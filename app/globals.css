@@ -1470,12 +1470,21 @@ img {
 
 /* ---------- embed Jestor ---------- */
 .jestor-wrap {
-  margin-top: 36px;
-  max-width: 760px;
-  margin-inline: auto;
+  margin: 40px auto 0;
+  max-width: 640px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: clamp(22px, 3.5vw, 40px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
 }
 .jestor-wrap .jestor-funil {
   min-height: 120px;
+  margin-inline: auto;
+}
+/* garante que os campos injetados pelo embed caibam no cartão */
+.jestor-wrap :where(input, select, textarea, button, iframe) {
+  max-width: 100%;
 }
 
 /* ---------- página obrigado ---------- */

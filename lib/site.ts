@@ -7,7 +7,7 @@ export const site = {
   holding: "Holding BEABA dos NEGÓCIOS",
   description:
     "Cafeteria autônoma de autoatendimento com café de alta qualidade. Escolha, pague e retire em segundos — sem fila e sem espera.",
-  url: "https://ponto33.site",
+  url: "https://ponto33cafe.com.br",
 
   contact: {
     phoneDisplay: "(11) 3230-1685",

@@ -7,10 +7,11 @@ export const DIAS_MES = 30;
 export const calcRates = {
   cmv: 0.27, // custo dos produtos vendidos
   impostos: 0.03,
-  royalty: 0.08,
-  marketing: 0.02,
   bancarias: 0.015, // taxas bancárias / adquirência
 } as const;
+
+// Royalty é um valor FIXO mensal (não percentual). Marketing: a Ponto 33 não cobra.
+export const royaltyFixo = 799;
 
 export type LocalPreset = {
   id: string;

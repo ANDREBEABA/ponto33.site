@@ -9,6 +9,10 @@ export const site = {
     "Cafeteria autônoma de autoatendimento com café de alta qualidade. Escolha, pague e retire em segundos — sem fila e sem espera.",
   url: "https://ponto33cafe.com.br",
 
+  // ID do contêiner do Google Tag Manager (público). Override opcional via
+  // NEXT_PUBLIC_GTM_ID no Vercel. Dentro do GTM entram GA4, Meta Pixel, Ads.
+  gtmId: "GTM-NGWKDXX4",
+
   contact: {
     phoneDisplay: "(11) 3230-1685",
     // WhatsApp em formato internacional (55 + DDD + número), sem símbolos.

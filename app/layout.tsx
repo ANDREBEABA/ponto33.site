@@ -8,9 +8,9 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Motion } from "@/components/Motion";
 import { site } from "@/lib/site";
 
-// ID do contêiner do Google Tag Manager (ex.: "GTM-XXXXXXX").
-// Defina NEXT_PUBLIC_GTM_ID no Vercel. Sem o ID, nada é carregado.
-const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
+// ID do contêiner do Google Tag Manager. Usa a variável de ambiente
+// NEXT_PUBLIC_GTM_ID (Vercel) quando definida; senão, o ID fixo de lib/site.ts.
+const gtmId = process.env.NEXT_PUBLIC_GTM_ID ?? site.gtmId;
 
 const display = Outfit({
   subsets: ["latin"],

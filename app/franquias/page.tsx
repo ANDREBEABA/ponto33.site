@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Manifesto } from "@/components/Manifesto";
 import { ProfitCalculator } from "@/components/ProfitCalculator";
+import { JestorForm } from "@/components/JestorForm";
 import { Faq } from "@/components/Faq";
 import {
   IconArrow,
@@ -22,10 +23,7 @@ export const metadata: Metadata = {
     "Seja um franqueado Ponto 33: cafeteria autônoma de autoatendimento, sem equipe, com baixo custo de aluguel, início simples e café de alta qualidade.",
 };
 
-const msgFranquia =
-  "Olá! Tenho interesse em uma franquia Ponto 33.";
-const msgApresentacao =
-  "Olá! Quero a apresentação da franquia Ponto 33.";
+const msgFranquia = "Olá! Tenho interesse em uma franquia Ponto 33.";
 
 export default function FranquiasPage() {
   return (
@@ -49,17 +47,17 @@ export default function FranquiasPage() {
               tempo — com café de alta qualidade.
             </p>
             <div className="hero-cta">
+              <a href="#quero-ser-franqueado" className="btn btn-primary">
+                Quero ser franqueado <IconArrow style={{ width: 18, height: 18 }} />
+              </a>
               <a
                 href={waLink(msgFranquia)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-primary"
+                className="btn btn-ghost"
               >
-                Quero ser franqueado <IconArrow style={{ width: 18, height: 18 }} />
+                Falar no WhatsApp
               </a>
-              <Link href="/contato" className="btn btn-ghost">
-                Receber apresentação
-              </Link>
             </div>
             <div className="impact">
               <div>
@@ -111,7 +109,8 @@ export default function FranquiasPage() {
       />
 
       {/* ---------- POR QUE INVESTIR ---------- */}
-      <section className="section wrap">
+      <section className="section section-light">
+        <div className="wrap">
         <div className="section-head center">
           <span className="eyebrow">Por que investir</span>
           <h2>Um modelo pensado para dar certo.</h2>
@@ -222,21 +221,19 @@ export default function FranquiasPage() {
             </ul>
           </div>
         </div>
+        </div>
       </section>
 
       {/* ---------- CALLOUT ---------- */}
       <section className="section wrap">
         <div className="callout">
-          <div className="big">33%</div>
+          <div className="big">45%</div>
           <div>
             <h3>Menos operação, mais resultado.</h3>
             <p>
               Sem fila, sem caixa e sem equipe no balcão: o modelo autônomo foi
               desenhado para reduzir custo fixo e manter a unidade rentável o dia
-              inteiro.{" "}
-              <span style={{ color: "var(--gold)" }}>
-                (percentual ilustrativo — a definir)
-              </span>
+              inteiro.
             </p>
           </div>
         </div>
@@ -297,34 +294,54 @@ export default function FranquiasPage() {
           <span className="eyebrow">Como começar</span>
           <h2>Da conversa à inauguração.</h2>
         </div>
-        <div className="timeline">
-          <div className="tl">
+        <div className="htimeline">
+          <div className="ht">
             <div className="dot">01</div>
-            <div className="c">
-              <h3>Contato</h3>
-              <p>Você fala com a gente e conta sobre o ponto que tem em mente.</p>
-            </div>
+            <h3>Contato</h3>
+            <p>Você fala com a gente e conta sobre o ponto que tem em mente.</p>
           </div>
-          <div className="tl">
+          <div className="ht">
             <div className="dot">02</div>
-            <div className="c">
-              <h3>Análise do ponto</h3>
-              <p>Avaliamos juntos a viabilidade e o potencial do local.</p>
-            </div>
+            <h3>Análise do ponto</h3>
+            <p>Avaliamos juntos a viabilidade e o potencial do local.</p>
           </div>
-          <div className="tl">
+          <div className="ht">
             <div className="dot">03</div>
-            <div className="c">
-              <h3>Instalação</h3>
-              <p>Cuidamos da montagem, do padrão da marca e da tecnologia.</p>
-            </div>
+            <h3>Instalação</h3>
+            <p>Cuidamos da montagem, do padrão da marca e da tecnologia.</p>
           </div>
-          <div className="tl">
+          <div className="ht">
             <div className="dot">04</div>
-            <div className="c">
-              <h3>Operação</h3>
-              <p>Sua unidade começa a faturar, com suporte contínuo.</p>
-            </div>
+            <h3>Operação</h3>
+            <p>Sua unidade começa a faturar, com suporte contínuo.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- FORMULÁRIO (JESTOR) ---------- */}
+      <section className="section wrap" id="quero-ser-franqueado">
+        <div className="franq-cta">
+          <div className="franq-cta-text">
+            <span className="eyebrow">Quero ser franqueado</span>
+            <h2>Dê o primeiro passo rumo ao seu café.</h2>
+            <p>
+              Preencha o formulário ao lado e nosso time entra em contato com a
+              apresentação completa da franquia Ponto 33.
+            </p>
+            <ul className="ticks">
+              <li>
+                <IconCheck /> Atendimento personalizado
+              </li>
+              <li>
+                <IconCheck /> Apresentação completa do modelo
+              </li>
+              <li>
+                <IconCheck /> Sem compromisso
+              </li>
+            </ul>
+          </div>
+          <div className="franq-cta-form">
+            <JestorForm />
           </div>
         </div>
       </section>
@@ -338,17 +355,11 @@ export default function FranquiasPage() {
           <div>
             <h2>Pronto para dar o próximo passo?</h2>
             <p>
-              Converse agora com nosso time e receba a apresentação completa da
-              franquia.
+              Preencha o formulário e receba a apresentação completa da franquia.
             </p>
           </div>
-          <a
-            href={waLink(msgApresentacao)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary"
-          >
-            Falar no WhatsApp <IconArrow style={{ width: 18, height: 18 }} />
+          <a href="#quero-ser-franqueado" className="btn btn-primary">
+            Quero ser franqueado <IconArrow style={{ width: 18, height: 18 }} />
           </a>
         </div>
       </section>

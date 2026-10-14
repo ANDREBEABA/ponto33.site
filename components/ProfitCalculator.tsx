@@ -7,6 +7,7 @@ import {
   calcDefaults,
   calcRates,
   locais,
+  royaltyFixo,
 } from "@/lib/calculator";
 
 type FieldProps = {
@@ -105,11 +106,10 @@ export function ProfitCalculator() {
   const faturamento = copos * preco * DIAS_MES;
   const cmv = faturamento * calcRates.cmv;
   const impostos = faturamento * calcRates.impostos;
-  const royalty = faturamento * calcRates.royalty;
-  const marketing = faturamento * calcRates.marketing;
   const bancarias = faturamento * calcRates.bancarias;
+  const royalty = royaltyFixo; // valor fixo mensal
 
-  const custos = cmv + impostos + royalty + marketing + bancarias + aluguel;
+  const custos = cmv + impostos + bancarias + royalty + aluguel;
   const lucro = faturamento - custos;
   const investimento = franchise.investimento;
   const payback = lucro > 0 ? investimento / lucro : 0;
@@ -214,16 +214,8 @@ export function ProfitCalculator() {
             value={brl(impostos)}
             muted
           />
-          <Row
-            label={`Royalty (${pct(calcRates.royalty)})`}
-            value={brl(royalty)}
-            muted
-          />
-          <Row
-            label={`Taxa de Marketing (${pct(calcRates.marketing)})`}
-            value={brl(marketing)}
-            muted
-          />
+          <Row label="Royalty (fixo)" value={brl(royalty)} muted />
+          <Row label="Taxa de Marketing" value="Não cobramos" muted />
           <Row label="Taxas bancárias (~1,5%)" value={brl(bancarias)} muted />
           <Row label="Aluguel" value={brl(aluguel)} muted />
           <div className="calc-line total">

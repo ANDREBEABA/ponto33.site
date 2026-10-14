@@ -1,11 +1,16 @@
 import type { Metadata, Viewport } from "next";
 import { Outfit, Hanken_Grotesk } from "next/font/google";
+import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Motion } from "@/components/Motion";
 import { site } from "@/lib/site";
+
+// ID do contêiner do Google Tag Manager. Usa a variável de ambiente
+// NEXT_PUBLIC_GTM_ID (Vercel) quando definida; senão, o ID fixo de lib/site.ts.
+const gtmId = process.env.NEXT_PUBLIC_GTM_ID ?? site.gtmId;
 
 const display = Outfit({
   subsets: ["latin"],
@@ -53,6 +58,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-BR" className={`${display.variable} ${body.variable}`}>
+      {gtmId && <GoogleTagManager gtmId={gtmId} />}
       <body>
         <Header />
         <main>{children}</main>

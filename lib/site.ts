@@ -7,7 +7,11 @@ export const site = {
   holding: "Holding BEABA dos NEGÓCIOS",
   description:
     "Cafeteria autônoma de autoatendimento com café de alta qualidade. Escolha, pague e retire em segundos — sem fila e sem espera.",
-  url: "https://ponto33.site",
+  url: "https://ponto33cafe.com.br",
+
+  // ID do contêiner do Google Tag Manager (público). Override opcional via
+  // NEXT_PUBLIC_GTM_ID no Vercel. Dentro do GTM entram GA4, Meta Pixel, Ads.
+  gtmId: "GTM-NGWKDXX4",
 
   contact: {
     phoneDisplay: "(11) 3230-1685",
@@ -23,6 +27,9 @@ export const site = {
       "Mais do que um café servido em segundos, somos o impulso exato para a sua jornada.",
     sub: "Ponto 33: o café para quem tem pressa, o ponto de avanço para quem tem propósito.",
   },
+
+  // ID do funil do formulário Jestor (franquia).
+  jestorFunilId: "funil_1791392358214_ttm8",
 } as const;
 
 // Números oficiais da franquia (fonte única — usados nos stats, calculadora e FAQ).

@@ -6,6 +6,7 @@ import {
   IconInstagram,
   IconWhatsApp,
 } from "@/components/icons";
+import { RedirectCountdown } from "@/components/RedirectCountdown";
 import { site, waLink } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -31,6 +32,8 @@ export default function ObrigadoPage() {
           Recebemos o seu cadastro. Nosso time já vai analisar o seu perfil e
           entrar em contato em breve com a apresentação completa da franquia.
         </p>
+
+        <RedirectCountdown />
 
         <div className="steps obrigado-steps">
           <div className="step">

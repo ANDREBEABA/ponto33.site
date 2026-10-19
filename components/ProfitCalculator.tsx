@@ -227,9 +227,7 @@ export function ProfitCalculator() {
 
         <a
           className="btn btn-primary"
-          href={waLink(
-            "Olá! Fiz uma simulação na calculadora de rentabilidade e quero falar sobre a franquia Ponto 33."
-          )}
+          href={waLink()}
           target="_blank"
           rel="noopener noreferrer"
         >

@@ -58,8 +58,12 @@ export const nav = [
   { label: "Contato", href: "/contato" },
 ] as const;
 
-// Monta um link de WhatsApp com mensagem opcional pré-preenchida.
-export function waLink(message?: string): string {
+// Mensagem padrão dos botões gerais de WhatsApp (quando waLink() é chamado sem argumento).
+export const waMensagemPadrao =
+  "Quero saber mais sobre a Franquia Ponto 33 Café";
+
+// Monta um link de WhatsApp com mensagem pré-preenchida (padrão = waMensagemPadrao).
+export function waLink(message: string = waMensagemPadrao): string {
   const base = `https://wa.me/${site.contact.whatsapp}`;
   return message ? `${base}?text=${encodeURIComponent(message)}` : base;
 }

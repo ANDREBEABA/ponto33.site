@@ -23,7 +23,6 @@ export const metadata: Metadata = {
     "Seja um franqueado Ponto 33: cafeteria autônoma de autoatendimento, sem equipe, com baixo custo de aluguel, início simples e café de alta qualidade.",
 };
 
-const msgFranquia = "Olá! Tenho interesse em uma franquia Ponto 33.";
 
 export default function FranquiasPage() {
   return (
@@ -51,7 +50,7 @@ export default function FranquiasPage() {
                 Quero ser franqueado <IconArrow style={{ width: 18, height: 18 }} />
               </a>
               <a
-                href={waLink(msgFranquia)}
+                href={waLink()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-ghost"

@@ -27,7 +27,7 @@ export default function NotFound() {
             Conheça as franquias
           </Link>
           <a
-            href={waLink("Olá! Tudo bem? Quero falar com a Ponto 33.")}
+            href={waLink()}
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-ghost"

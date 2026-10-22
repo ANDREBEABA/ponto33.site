@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }[] = [
     { path: "/", priority: 1, changeFrequency: "weekly" },
     { path: "/franquias", priority: 0.9, changeFrequency: "weekly" },
+    { path: "/calculadora", priority: 0.8, changeFrequency: "monthly" },
     { path: "/ofereca-um-ponto", priority: 0.8, changeFrequency: "monthly" },
     { path: "/contato", priority: 0.6, changeFrequency: "monthly" },
   ];

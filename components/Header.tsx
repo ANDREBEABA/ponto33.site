@@ -44,6 +44,21 @@ export function Header() {
     );
   }
 
+  // Variante landing enxuta (ex.: /calculadora): apenas o logo centralizado.
+  if (pathname === "/calculadora") {
+    return (
+      <header className="site-header">
+        <div className="wrap nav-landing">
+          <span className="nav-landing-spacer" aria-hidden="true" />
+          <Link href="/" className="brand" aria-label="Ponto 33 — início">
+            <BrandLogo className="brand-logo-lg" />
+          </Link>
+          <span className="nav-landing-spacer" aria-hidden="true" />
+        </div>
+      </header>
+    );
+  }
+
   return (
     <header className="site-header">
       <div className="wrap nav">

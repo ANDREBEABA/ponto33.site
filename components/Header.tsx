@@ -25,7 +25,7 @@ export function Header() {
   const pathname = usePathname();
 
   // Variante landing: a página de Franquias não usa o cabeçalho de navegação.
-  if (pathname === "/franquias") {
+  if (pathname === "/franquia") {
     return (
       <header className="site-header">
         <div className="wrap nav-landing">
@@ -34,7 +34,7 @@ export function Header() {
             <BrandLogo className="brand-logo-lg" />
           </Link>
           <a
-            href="/franquias#quero-ser-franqueado"
+            href="/franquia#quero-ser-franqueado"
             className="btn btn-primary nav-landing-cta"
           >
             Quero ser franqueado →
@@ -77,7 +77,7 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-          <Link href="/franquias" className="btn btn-primary" onClick={() => setOpen(false)}>
+          <Link href="/franquia" className="btn btn-primary" onClick={() => setOpen(false)}>
             Seja franqueado
           </Link>
         </nav>

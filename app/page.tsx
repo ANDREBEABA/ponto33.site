@@ -29,7 +29,7 @@ export default function HomePage() {
               espera.
             </p>
             <div className="hero-cta">
-              <Link href="/franquias" className="btn btn-primary">
+              <Link href="/franquia" className="btn btn-primary">
                 Quero uma franquia <IconArrow style={{ width: 18, height: 18 }} />
               </Link>
               <a
@@ -250,7 +250,7 @@ export default function HomePage() {
               expansão. Descubra como ter a sua unidade.
             </p>
           </div>
-          <Link href="/franquias" className="btn btn-primary">
+          <Link href="/franquia" className="btn btn-primary">
             Conhecer franquias <IconArrow style={{ width: 18, height: 18 }} />
           </Link>
         </div>

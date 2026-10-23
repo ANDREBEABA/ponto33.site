@@ -23,7 +23,7 @@ export default function NotFound() {
           <Link href="/" className="btn btn-primary btn-lg">
             Voltar ao início <IconArrow style={{ width: 18, height: 18 }} />
           </Link>
-          <Link href="/franquias" className="btn btn-ghost">
+          <Link href="/franquia" className="btn btn-ghost">
             Conheça as franquias
           </Link>
           <a
